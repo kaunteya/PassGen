@@ -12,7 +12,6 @@ struct ContentView: View {
     let passwordGenerator = PasswordGenerator()
 
     @State private var passText: String = ""
-
     @State private var upperCase = true
     @State private var lowerCase = true
     @State private var numbers = true
