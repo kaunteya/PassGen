@@ -21,7 +21,7 @@ struct ContentView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack(spacing: 10) {
-                TextField("A", text: $passText)
+                TextField("", text: $passText)
                 Button(action: {
                     let pb = NSPasteboard.general
                     pb.clearContents()
