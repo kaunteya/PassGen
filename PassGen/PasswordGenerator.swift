@@ -4,7 +4,7 @@ struct PasswordGenerator {
     static let lowercase = "abcdefghijklmnopqrstuvwxyz"
     static let uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     static let numbers = "0123456789"
-    static let symbols = ")(*&^%$#@!~`[]{}:;'<>?,."
+    static let symbols = ")(*&^%$#@!~[]{}:;'<>?,."
 
     func callAsFunction(upperCase: Bool, lowerCase: Bool, numbers: Bool, symbols: Bool, length: Int) -> String {
         var str = ""

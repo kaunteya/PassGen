@@ -23,7 +23,9 @@ struct ContentView: View {
             HStack(spacing: 10) {
                 TextField("A", text: $passText)
                 Button(action: {
-                    NSPasteboard.general.setString("Kola", forType: .string)
+                    let pb = NSPasteboard.general
+                    pb.clearContents()
+                    pb.setString(self.passText, forType: .string)
                 }) {
                     Image("Copy")
                         .resizable()
