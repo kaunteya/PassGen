@@ -13,6 +13,7 @@
 		BE16858D24377E0C0017E496 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE16858C24377E0C0017E496 /* Preview Assets.xcassets */; };
 		BE16859024377E0C0017E496 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE16858E24377E0C0017E496 /* Main.storyboard */; };
 		BE1685992437A0130017E496 /* PasswordGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1685982437A0130017E496 /* PasswordGenerator.swift */; };
+		BE16859B2437BA440017E496 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BE16859A2437BA440017E496 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		BE16859124377E0C0017E496 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE16859224377E0C0017E496 /* PassGen.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PassGen.entitlements; sourceTree = "<group>"; };
 		BE1685982437A0130017E496 /* PasswordGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordGenerator.swift; sourceTree = "<group>"; };
+		BE16859A2437BA440017E496 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				BE1685982437A0130017E496 /* PasswordGenerator.swift */,
 				BE16858924377E0C0017E496 /* Assets.xcassets */,
 				BE16858E24377E0C0017E496 /* Main.storyboard */,
+				BE16859A2437BA440017E496 /* README.md */,
 				BE16859124377E0C0017E496 /* Info.plist */,
 				BE16859224377E0C0017E496 /* PassGen.entitlements */,
 				BE16858B24377E0C0017E496 /* Preview Content */,
@@ -137,6 +140,7 @@
 			files = (
 				BE16859024377E0C0017E496 /* Main.storyboard in Resources */,
 				BE16858D24377E0C0017E496 /* Preview Assets.xcassets in Resources */,
+				BE16859B2437BA440017E496 /* README.md in Resources */,
 				BE16858A24377E0C0017E496 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
