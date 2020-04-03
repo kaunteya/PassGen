@@ -19,7 +19,7 @@ struct ContentView: View {
     @State private var length: Float = 20
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 20) {
+        VStack(alignment: .leading, spacing: 10) {
             HStack(spacing: 10) {
                 TextField("A", text: $passText)
                 Button(action: {
@@ -46,7 +46,7 @@ struct ContentView: View {
                         .frame(width: 18)
                 }.buttonStyle(BorderlessButtonStyle())
             }
-
+            Divider()
             HStack(spacing: 20) {
                 Toggle(isOn: $upperCase) {
                     Text("Uppercase")
@@ -63,8 +63,8 @@ struct ContentView: View {
             }.fixedSize()
             HStack {
                 Text("Password Length:")
-                TextField("", value: $length, formatter: NumberFormatter()).frame(width: 40)
-                Slider(value: $length, in: 1...99, step: 1)
+                TextField("", value: $length, formatter: NumberFormatter()).frame(width: 25)
+                Slider(value: $length, in: 1...99)
             }
         }.padding()
     }
