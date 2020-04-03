@@ -29,6 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.contentView = NSHostingView(rootView: contentView)
         window.makeKeyAndOrderFront(nil)
         window.titlebarAppearsTransparent = true
+        window.title = "PassGen"
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
