@@ -21,20 +21,7 @@ struct ContentView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack(spacing: 10) {
-                HStack(spacing: -17) {
-                    TextField("", text: $passText)
-                    Button(action: {
-                        let pb = NSPasteboard.general
-                        pb.clearContents()
-                        pb.setString(self.passText, forType: .string)
-                    }) {
-                        Image("Copy")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 15)
-
-                    }.buttonStyle(BorderlessButtonStyle())
-                }
+                TextField("", text: $passText)
                 Button(action: {
                     self.passText = self.passwordGenerator(
                         upperCase: self.upperCase,
@@ -47,6 +34,15 @@ struct ContentView: View {
                     Text("Generate")
                 }
             }
+            Button(action: {
+                let pb = NSPasteboard.general
+                pb.clearContents()
+                pb.setString(self.passText, forType: .string)
+            }) {
+                Text("Copy password")
+
+            }.buttonStyle(LinkButtonStyle())
+
             Divider()
             HStack(spacing: 20) {
                 Toggle(isOn: $upperCase) {
