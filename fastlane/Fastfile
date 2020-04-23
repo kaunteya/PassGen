@@ -28,7 +28,7 @@ platform :mac do
   end
 
   desc "Push a new release on github"
-  lane :put_github do
+  lane :release do
     increment_version_number_in_xcodeproj(bump_type: "patch", target: "PassGen")
   end
   
