@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='PassGenTests.xctest' tests='1' failures='0'>
+  <testsuite name='PassGenTests.PassGenTests' tests='1' failures='0'>
+    <testcase classname='PassGenTests.PassGenTests' name='testExample' time='0.073'/>
+  </testsuite>
+</testsuites>
