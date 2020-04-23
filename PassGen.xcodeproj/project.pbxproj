@@ -14,7 +14,18 @@
 		BE16859024377E0C0017E496 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE16858E24377E0C0017E496 /* Main.storyboard */; };
 		BE1685992437A0130017E496 /* PasswordGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1685982437A0130017E496 /* PasswordGenerator.swift */; };
 		BE16859B2437BA440017E496 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BE16859A2437BA440017E496 /* README.md */; };
+		BEA494CF2451D0D900DC7CAA /* PassGenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA494CE2451D0D900DC7CAA /* PassGenTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BEA494D12451D0D900DC7CAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE16857A24377E0A0017E496 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE16858124377E0A0017E496;
+			remoteInfo = PassGen;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		BE16858224377E0A0017E496 /* PassGen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PassGen.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -27,10 +38,20 @@
 		BE16859224377E0C0017E496 /* PassGen.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PassGen.entitlements; sourceTree = "<group>"; };
 		BE1685982437A0130017E496 /* PasswordGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordGenerator.swift; sourceTree = "<group>"; };
 		BE16859A2437BA440017E496 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		BEA494CC2451D0D900DC7CAA /* PassGenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PassGenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEA494CE2451D0D900DC7CAA /* PassGenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassGenTests.swift; sourceTree = "<group>"; };
+		BEA494D02451D0D900DC7CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		BE16857F24377E0A0017E496 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEA494C92451D0D900DC7CAA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -44,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				BE16858424377E0A0017E496 /* PassGen */,
+				BEA494CD2451D0D900DC7CAA /* PassGenTests */,
 				BE16858324377E0A0017E496 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				BE16858224377E0A0017E496 /* PassGen.app */,
+				BEA494CC2451D0D900DC7CAA /* PassGenTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,6 +103,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		BEA494CD2451D0D900DC7CAA /* PassGenTests */ = {
+			isa = PBXGroup;
+			children = (
+				BEA494CE2451D0D900DC7CAA /* PassGenTests.swift */,
+				BEA494D02451D0D900DC7CAA /* Info.plist */,
+			);
+			path = PassGenTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -100,6 +132,24 @@
 			productReference = BE16858224377E0A0017E496 /* PassGen.app */;
 			productType = "com.apple.product-type.application";
 		};
+		BEA494CB2451D0D900DC7CAA /* PassGenTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEA494D52451D0D900DC7CAA /* Build configuration list for PBXNativeTarget "PassGenTests" */;
+			buildPhases = (
+				BEA494C82451D0D900DC7CAA /* Sources */,
+				BEA494C92451D0D900DC7CAA /* Frameworks */,
+				BEA494CA2451D0D900DC7CAA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BEA494D22451D0D900DC7CAA /* PBXTargetDependency */,
+			);
+			name = PassGenTests;
+			productName = PassGenTests;
+			productReference = BEA494CC2451D0D900DC7CAA /* PassGenTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -112,6 +162,10 @@
 				TargetAttributes = {
 					BE16858124377E0A0017E496 = {
 						CreatedOnToolsVersion = 11.4;
+					};
+					BEA494CB2451D0D900DC7CAA = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = BE16858124377E0A0017E496;
 					};
 				};
 			};
@@ -129,6 +183,7 @@
 			projectRoot = "";
 			targets = (
 				BE16858124377E0A0017E496 /* PassGen */,
+				BEA494CB2451D0D900DC7CAA /* PassGenTests */,
 			);
 		};
 /* End PBXProject section */
@@ -145,6 +200,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BEA494CA2451D0D900DC7CAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -158,7 +220,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BEA494C82451D0D900DC7CAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEA494CF2451D0D900DC7CAA /* PassGenTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BEA494D22451D0D900DC7CAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE16858124377E0A0017E496 /* PassGen */;
+			targetProxy = BEA494D12451D0D900DC7CAA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BE16858E24377E0C0017E496 /* Main.storyboard */ = {
@@ -335,6 +413,46 @@
 			};
 			name = Release;
 		};
+		BEA494D32451D0D900DC7CAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = KQQ77ZBE5E;
+				INFOPLIST_FILE = PassGenTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kaunteya.PassGenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PassGen.app/Contents/MacOS/PassGen";
+			};
+			name = Debug;
+		};
+		BEA494D42451D0D900DC7CAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = KQQ77ZBE5E;
+				INFOPLIST_FILE = PassGenTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kaunteya.PassGenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PassGen.app/Contents/MacOS/PassGen";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -352,6 +470,15 @@
 			buildConfigurations = (
 				BE16859624377E0C0017E496 /* Debug */,
 				BE16859724377E0C0017E496 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BEA494D52451D0D900DC7CAA /* Build configuration list for PBXNativeTarget "PassGenTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEA494D32451D0D900DC7CAA /* Debug */,
+				BEA494D42451D0D900DC7CAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
