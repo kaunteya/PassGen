@@ -26,6 +26,11 @@ Description of what the lane does
 fastlane mac testbuild
 ```
 Run tests
+### mac put_github
+```
+fastlane mac put_github
+```
+Push a new release on github
 
 ----
 

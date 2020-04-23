@@ -29,8 +29,7 @@ platform :mac do
 
   desc "Push a new release on github"
   lane :put_github do
-    ensure_git_status_clean
-    ensure_git_branch(branch: "master")
+    increment_version_number(bump_type: "minor")
   end
   
 end
