@@ -30,6 +30,7 @@ platform :mac do
   desc "Push a new release on github"
   lane :release do
     increment_version_number_in_xcodeproj(bump_type: "patch", target: "PassGen")
+    commit_version_bump
   end
   
 end

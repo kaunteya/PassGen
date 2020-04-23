@@ -26,9 +26,9 @@ Description of what the lane does
 fastlane mac testbuild
 ```
 Run tests
-### mac put_github
+### mac release
 ```
-fastlane mac put_github
+fastlane mac release
 ```
 Push a new release on github
 
