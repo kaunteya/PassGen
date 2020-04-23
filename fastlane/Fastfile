@@ -31,6 +31,7 @@ platform :mac do
   lane :release do
     increment_version_number_in_xcodeproj(bump_type: "patch", target: "PassGen")
     commit_version_bump
+    add_git_tag
   end
   
 end
