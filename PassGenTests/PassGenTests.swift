@@ -18,5 +18,4 @@ class PassGenTests: XCTestCase {
         XCTAssertEqual(val.count, 10)
         XCTAssert(val.allSatisfy { $0.isUppercase })
     }
-
 }
