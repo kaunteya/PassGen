@@ -22,6 +22,7 @@ platform :mac do
     increment_version_number_in_xcodeproj(bump_type: "patch", target: "PassGen")
     commit_version_bump
     add_git_tag(tag: "#{get_version_number}(#{get_build_number})")
+    push_to_git_remote
   end
 
 end
