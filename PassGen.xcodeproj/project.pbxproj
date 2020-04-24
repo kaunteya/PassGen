@@ -41,6 +41,7 @@
 		BEA494CC2451D0D900DC7CAA /* PassGenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PassGenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA494CE2451D0D900DC7CAA /* PassGenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassGenTests.swift; sourceTree = "<group>"; };
 		BEA494D02451D0D900DC7CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEA494D72452A80100DC7CAA /* Fastfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Fastfile; path = fastlane/Fastfile; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +88,7 @@
 				BE1685982437A0130017E496 /* PasswordGenerator.swift */,
 				BE16858924377E0C0017E496 /* Assets.xcassets */,
 				BE16858E24377E0C0017E496 /* Main.storyboard */,
+				BEA494D72452A80100DC7CAA /* Fastfile */,
 				BE16859A2437BA440017E496 /* README.md */,
 				BE16859124377E0C0017E496 /* Info.plist */,
 				BE16859224377E0C0017E496 /* PassGen.entitlements */,
@@ -381,7 +383,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.5.3;
+				MARKETING_VERSION = 1.5.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaunteya.PassGen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -407,7 +409,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.5.3;
+				MARKETING_VERSION = 1.5.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaunteya.PassGen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

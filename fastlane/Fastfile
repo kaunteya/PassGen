@@ -16,22 +16,12 @@
 default_platform(:mac)
 
 platform :mac do
-  desc "Description of what the lane does"
-  lane :custom_lane do
-   run_tests(scheme: "SwiftUtilTests")
-    # add actions here: https://docs.fastlane.tools/actions
-  end
-
-  desc "Run tests"
-  lane :testbuild do
-    run_tests(scheme: "SwiftUtilTests")
-  end
 
   desc "Push a new release on github"
   lane :release do
     increment_version_number_in_xcodeproj(bump_type: "patch", target: "PassGen")
     commit_version_bump
-    add_git_tag
+    add_git_tag(tag: "#{get_version_number}(#{get_build_number})")
   end
-  
+
 end
