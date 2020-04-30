@@ -16,6 +16,10 @@
 default_platform(:mac)
 
 platform :mac do
+  lane :build do
+    gym(scheme: "PassGen", destination: "platform=macOS")
+#    build_mac_app(project: "PassGen.xcodeproj", scheme: "PassGen", destination: "platform=macOS")
+  end
 
   desc "Push a new release on github"
   lane :release do

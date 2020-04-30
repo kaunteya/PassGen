@@ -29,15 +29,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.contentView = NSHostingView(rootView: contentView)
         window.makeKeyAndOrderFront(nil)
         window.titlebarAppearsTransparent = true
+        window.setFrameAutosaveName("Passgen window")
         window.level = .floating
         window.title = "PassGen"
     }
 
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        true
     }
-
-
 }
 
 
