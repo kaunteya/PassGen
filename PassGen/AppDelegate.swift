@@ -8,12 +8,15 @@
 
 import Cocoa
 import SwiftUI
+import StoreKit
+import Combine
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     var window: NSWindow!
 
+    static var store = Set<AnyCancellable>()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Create the SwiftUI view that provides the window contents.
@@ -32,6 +35,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.setFrameAutosaveName("Passgen window")
         window.level = .floating
         window.title = "PassGen"
+
+
+        UserDefaults.generateCountChanged.sink { val in
+            print("Generatio \(val)")
+            if val.isMultiple(of: 100) {
+                SKStoreReviewController.requestReview()
+            }
+        }.store(in: &Self.store)
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {

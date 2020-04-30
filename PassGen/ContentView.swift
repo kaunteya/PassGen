@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ContentView: View {
     let passwordGenerator = PasswordGenerator()
@@ -30,6 +31,7 @@ struct ContentView: View {
                         symbols: self.symbols,
                         length: Int(self.length)
                     )
+                    UserDefaults.generateCount += 1
                 }) {
                     Text("Generate")
                 }

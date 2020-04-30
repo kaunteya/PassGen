@@ -14,6 +14,7 @@
 		BE16859024377E0C0017E496 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE16858E24377E0C0017E496 /* Main.storyboard */; };
 		BE1685992437A0130017E496 /* PasswordGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1685982437A0130017E496 /* PasswordGenerator.swift */; };
 		BE16859B2437BA440017E496 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BE16859A2437BA440017E496 /* README.md */; };
+		BE2F3F4D245B2382005E0503 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2F3F4C245B2381005E0503 /* UserDefaults.swift */; };
 		BEA494CF2451D0D900DC7CAA /* PassGenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA494CE2451D0D900DC7CAA /* PassGenTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		BE16859224377E0C0017E496 /* PassGen.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PassGen.entitlements; sourceTree = "<group>"; };
 		BE1685982437A0130017E496 /* PasswordGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordGenerator.swift; sourceTree = "<group>"; };
 		BE16859A2437BA440017E496 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		BE2F3F4C245B2381005E0503 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		BEA494CC2451D0D900DC7CAA /* PassGenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PassGenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA494CE2451D0D900DC7CAA /* PassGenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassGenTests.swift; sourceTree = "<group>"; };
 		BEA494D02451D0D900DC7CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				BE16858524377E0A0017E496 /* AppDelegate.swift */,
 				BE16858724377E0A0017E496 /* ContentView.swift */,
+				BE2F3F4C245B2381005E0503 /* UserDefaults.swift */,
 				BE1685982437A0130017E496 /* PasswordGenerator.swift */,
 				BE16858924377E0C0017E496 /* Assets.xcassets */,
 				BE16858E24377E0C0017E496 /* Main.storyboard */,
@@ -216,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE2F3F4D245B2382005E0503 /* UserDefaults.swift in Sources */,
 				BE16858824377E0A0017E496 /* ContentView.swift in Sources */,
 				BE16858624377E0A0017E496 /* AppDelegate.swift in Sources */,
 				BE1685992437A0130017E496 /* PasswordGenerator.swift in Sources */,
