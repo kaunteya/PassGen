@@ -38,7 +38,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
         UserDefaults.generateCountChanged.sink { val in
-            print("Generatio \(val)")
             if val.isMultiple(of: 100) {
                 SKStoreReviewController.requestReview()
             }
