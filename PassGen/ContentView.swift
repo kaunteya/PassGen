@@ -65,7 +65,17 @@ struct ContentView: View {
                 TextField("", value: $length, formatter: NumberFormatter()).frame(width: 25)
                 Slider(value: $length, in: 1...99)
             }
-        }.padding()
+            HStack {
+                Spacer()
+                Button(action: {
+                    let url = URL(string: "https://github.com/kaunteya/PassGen")!
+                    NSWorkspace.shared.open(url)
+                }) {
+                    Text("View on github")
+
+                }.buttonStyle(LinkButtonStyle()).font(Font.system(size: 10))
+            }
+        }.padding(EdgeInsets(top: 20, leading: 20, bottom: 2, trailing: 20))
     }
 }
 
