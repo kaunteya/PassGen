@@ -20,9 +20,13 @@ struct ContentView: View {
 	var body: some View {
 		VStack(alignment: .leading, spacing: 10) {
 			VStack(spacing: 10) {
-				TextEditor(text: $passText)
+				Text(passText)
+					.textSelection(.enabled)
 					.font(.largeTitle)
+					.monospaced()
+					.frame(maxWidth: .infinity, alignment: .topLeading)
 					.padding(5)
+					.frame(minHeight: 200, alignment: .topLeading)
 					.overlay(content: {
 						RoundedRectangle(cornerRadius: 12)
 							.stroke(.secondary)
@@ -41,15 +45,8 @@ struct ContentView: View {
 						.opacity(passText.isEmpty ? 0 : 1)
 						.animation(.default, value: passText)
 					})
-					.frame(minHeight: 200)
 				Button(action: {
-					self.passText = self.passwordGenerator(
-						upperCase: self.upperCase,
-						lowerCase: self.lowerCase,
-						numbers: self.numbers,
-						symbols: self.symbols,
-						length: Int(self.length)
-					)
+					updatePassText()
 				}) {
 					Text("Generate")
 				}
@@ -59,25 +56,24 @@ struct ContentView: View {
 
 			Divider()
 			HStack(spacing: 20) {
-				Toggle(isOn: $upperCase) {
-					Text("Uppercase")
-				}
-				Toggle(isOn: $lowerCase) {
-					Text("Lowercase")
-				}
-				Toggle(isOn: $numbers) {
-					Text("Numbers")
-				}
-				Toggle(isOn: $symbols) {
-					Text("Symbols")
-				}
+				Toggle("Uppercase", isOn: $upperCase)
+				Toggle("Lowercase", isOn: $lowerCase)
+				Toggle("Numbers", isOn: $numbers)
+				Toggle("Symbols", isOn: $symbols)
 			}
 			.fixedSize()
+			.onChange(of: [upperCase, lowerCase, numbers, symbols]) {
+				updatePassText()
+			}
 
 			HStack {
-				Text("Password Length:")
+				Slider(value: $length, in: 10...50, step: 1) {
+					Text("Password Length:")
+				} onEditingChanged: { a in
+					updatePassText()
+				}
 				TextField("", value: $length, formatter: NumberFormatter()).frame(width: 25)
-				Slider(value: $length, in: 1...99)
+
 			}
 			HStack {
 				Spacer()
@@ -90,8 +86,30 @@ struct ContentView: View {
 				}.buttonStyle(LinkButtonStyle()).font(Font.system(size: 10))
 			}
 		}
+		.onAppear {
+			updatePassText()
+		}
 		.padding()
 	}
+
+	func updatePassText() {
+		Task {
+			for _ in 0..<10 {
+				try? await Task.sleep(for: .milliseconds(20))
+				withAnimation {
+					self.passText = self.passwordGenerator(
+						upperCase: self.upperCase,
+						lowerCase: self.lowerCase,
+						numbers: self.numbers,
+						symbols: self.symbols,
+						length: Int(self.length)
+					)
+				}
+
+			}
+		}
+	}
+
 }
 
 #Preview {
