@@ -10,8 +10,8 @@ import SwiftUI
 @main
 struct PassGenApp: App {
     var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+		Window("PassGen", id: "Main") {
+			ContentView()
+		}
     }
 }
