@@ -32,19 +32,7 @@ struct ContentView: View {
 							.fill(.fill.tertiary)
 					})
 					.overlay(alignment: .bottomTrailing, content: {
-						Button(action: {
-							let pb = NSPasteboard.general
-							pb.clearContents()
-							pb.setString(self.passText, forType: .string)
-						}) {
-							Image(systemName: "document.on.clipboard")
-								.imageScale(.large)
-						}
-						.padding(7)
-						.help("Copy password")
-						.opacity(passText.isEmpty ? 0 : 1)
-						.animation(.default, value: passText)
-						.focusEffectDisabled()
+						copyButton
 					})
 				Button(action: {
 					updatePassText()
@@ -108,6 +96,22 @@ struct ContentView: View {
 		.buttonStyle(.link)
 		.controlSize(.small)
 		.frame(maxWidth: .infinity, alignment: .trailing)
+	}
+
+	var copyButton: some View {
+		Button(action: {
+			let pb = NSPasteboard.general
+			pb.clearContents()
+			pb.setString(self.passText, forType: .string)
+		}) {
+			Image(systemName: "document.on.clipboard")
+				.imageScale(.large)
+		}
+		.padding(7)
+		.help("Copy password")
+		.opacity(passText.isEmpty ? 0 : 1)
+		.animation(.default, value: passText)
+		.focusEffectDisabled()
 	}
 
 	func updatePassText() {
