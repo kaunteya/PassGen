@@ -21,8 +21,29 @@ struct ContentView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            HStack(spacing: 10) {
-                TextField("", text: $passText)
+            VStack(spacing: 10) {
+				TextEditor(text: $passText)
+					.font(.largeTitle)
+					.padding(5)
+					.overlay(content: {
+						RoundedRectangle(cornerRadius: 12)
+							.stroke(.secondary)
+					})
+					.overlay(alignment: .bottomTrailing, content: {
+						Button(action: {
+							let pb = NSPasteboard.general
+							pb.clearContents()
+							pb.setString(self.passText, forType: .string)
+						}) {
+							Image(systemName: "document.on.clipboard")
+								.imageScale(.large)
+						}
+						.padding(7)
+						.help("Copy password")
+						.opacity(passText.isEmpty ? 0 : 1)
+						.animation(.default, value: passText)
+					})
+					.frame(minHeight: 200)
                 Button(action: {
                     self.passText = self.passwordGenerator(
                         upperCase: self.upperCase,
@@ -35,15 +56,9 @@ struct ContentView: View {
                 }) {
                     Text("Generate")
                 }
+				.buttonStyle(.borderedProminent)
+				.controlSize(.extraLarge)
             }
-            Button(action: {
-                let pb = NSPasteboard.general
-                pb.clearContents()
-                pb.setString(self.passText, forType: .string)
-            }) {
-                Text("Copy password")
-
-            }.buttonStyle(LinkButtonStyle())
 
             Divider()
             HStack(spacing: 20) {
@@ -59,12 +74,14 @@ struct ContentView: View {
                 Toggle(isOn: $symbols) {
                     Text("Symbols")
                 }
-            }.fixedSize()
-            HStack {
-                Text("Password Length:")
-                TextField("", value: $length, formatter: NumberFormatter()).frame(width: 25)
-                Slider(value: $length, in: 1...99)
             }
+			.fixedSize()
+
+			HStack {
+				Text("Password Length:")
+				TextField("", value: $length, formatter: NumberFormatter()).frame(width: 25)
+				Slider(value: $length, in: 1...99)
+			}
             HStack {
                 Spacer()
                 Button(action: {
@@ -75,7 +92,8 @@ struct ContentView: View {
 
                 }.buttonStyle(LinkButtonStyle()).font(Font.system(size: 10))
             }
-        }.padding(EdgeInsets(top: 20, leading: 20, bottom: 2, trailing: 20))
+        }
+		.padding()
     }
 }
 
