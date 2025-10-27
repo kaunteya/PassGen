@@ -18,18 +18,18 @@ struct ContentView: View {
 	@State private var length: Float = 20
 
 	var body: some View {
-		VStack(alignment: .leading, spacing: 10) {
+		VStack(alignment: .leading, spacing: 30) {
 			VStack(spacing: 10) {
 				Text(passText)
 					.textSelection(.enabled)
 					.font(.largeTitle)
 					.monospaced()
 					.frame(maxWidth: .infinity, alignment: .topLeading)
-					.padding(5)
+					.padding(8)
 					.frame(minHeight: 200, alignment: .topLeading)
 					.overlay(content: {
 						RoundedRectangle(cornerRadius: 12)
-							.stroke(.secondary)
+							.fill(.fill.tertiary)
 					})
 					.overlay(alignment: .bottomTrailing, content: {
 						Button(action: {
@@ -44,6 +44,7 @@ struct ContentView: View {
 						.help("Copy password")
 						.opacity(passText.isEmpty ? 0 : 1)
 						.animation(.default, value: passText)
+						.focusEffectDisabled()
 					})
 				Button(action: {
 					updatePassText()
@@ -55,41 +56,58 @@ struct ContentView: View {
 			}
 
 			Divider()
-			HStack(spacing: 20) {
-				Toggle("Uppercase", isOn: $upperCase)
-				Toggle("Lowercase", isOn: $lowerCase)
-				Toggle("Numbers", isOn: $numbers)
-				Toggle("Symbols", isOn: $symbols)
-			}
-			.fixedSize()
-			.onChange(of: [upperCase, lowerCase, numbers, symbols]) {
-				updatePassText()
-			}
-
-			HStack {
-				Slider(value: $length, in: 10...50, step: 1) {
-					Text("Password Length:")
-				} onEditingChanged: { a in
+			VStack(alignment: .leading, spacing: 10) {
+				HStack(spacing: 20) {
+					Toggle("Uppercase", isOn: $upperCase)
+					Toggle("Lowercase", isOn: $lowerCase)
+					Toggle("Numbers", isOn: $numbers)
+					Toggle("Symbols", isOn: $symbols)
+				}
+				.fixedSize()
+				.onChange(of: [upperCase, lowerCase, numbers, symbols]) {
 					updatePassText()
 				}
-				TextField("", value: $length, formatter: NumberFormatter()).frame(width: 25)
 
-			}
-			HStack {
-				Spacer()
-				Button(action: {
-					let url = URL(string: "https://github.com/kaunteya/PassGen")!
-					NSWorkspace.shared.open(url)
-				}) {
-					Text("View on github")
-
-				}.buttonStyle(LinkButtonStyle()).font(Font.system(size: 10))
+				HStack {
+					Slider(value: $length, in: 10...50, step: 1) {
+						Text("Password Length: ")
+							.monospacedDigit()
+					} onEditingChanged: { a in
+						updatePassText()
+					}
+					TextField("", value: $length, formatter: NumberFormatter()).frame(width: 25)
+				}
 			}
 		}
 		.onAppear {
 			updatePassText()
 		}
 		.padding()
+		.padding(.bottom)
+		.overlay(alignment: .bottomTrailing) {
+			githubButton
+		}
+		.padding()
+
+	}
+	var githubButton: some View {
+		Button(action: {
+			let url = URL(string: "https://github.com/kaunteya/PassGen")!
+			NSWorkspace.shared.open(url)
+		}) {
+			Label {
+				Text("View on github")
+			} icon: {
+				Image(.githubMark)
+					.resizable()
+					.scaledToFit()
+					.frame(height: 11)
+			}
+			.labelIconToTitleSpacing(2)
+		}
+		.buttonStyle(.link)
+		.controlSize(.small)
+		.frame(maxWidth: .infinity, alignment: .trailing)
 	}
 
 	func updatePassText() {
